@@ -1,24 +1,45 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-const Title = () => <h1>Listado de usuario</h1>;
+const USERS = [
+	{
+		name: 'José Iván Campos Chávez',
+		role: 'Alumno'
+	},
+	{
+		name: 'José Campos Avaloz'
+	},
+	{
+		name: 'Juan Canelo Chávez',
+		active: 'Activo'
+	}
+];
 
-const User = ({ name, active, role }) => {
+const Title = ({ children }) => <h1>{children}</h1>;
+
+// name: dsplayName es para renombrar una prop, sirve mucho si manda un componente como props y poder renombrarlo, los otros son valores por defecto
+const User = ({ name: dsplayName, active = 'Activo', role = 'Profesor' }) => (
+	<div className='user'>
+		<span className='name'>{dsplayName}</span>
+		<span className='active'>{active}</span>
+		<span className='role'>{role}</span>
+	</div>
+);
+
+const List = ({ users, children }) => {
+	const usersRendered = users.map(user => <User key={user.name} {...user} />);
 	return (
-		<div className='user'>
-			<span className='name'>{name}</span>
-			<span className='active'>{active}</span>
-			<span className='role'>{role}</span>
+		<div className='list'>
+			{children}
+			{usersRendered}
 		</div>
 	);
 };
 
 const app = (
-	<div className='list'>
-		<Title />
-		<User name='Pablo Castellano' active='Activo' role='Profesor' />
-		<User name='Jose Ivan Campos Chavez' active='Activo' role='Profesor' />
-	</div>
+	<List users={USERS}>
+		<Title>Listado de usuarios</Title>
+	</List>
 );
 
 const container = document.getElementById('root');
