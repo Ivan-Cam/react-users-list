@@ -4,14 +4,28 @@ import UsersList from './components/UsersList';
 const USERS = [
 	{
 		name: 'José Iván Campos Chávez',
-		role: 'Alumno'
+		active: true,
+		role: 'student'
 	},
 	{
-		name: 'José Campos Avaloz'
+		name: 'José Campos Avaloz',
+		active: true,
+		role: 'teacher'
 	},
 	{
 		name: 'Juan Canelo Chávez',
-		active: 'Activo'
+		active: false,
+		role: 'teacher'
+	},
+	{
+		name: 'Juan3 Canelo Chávez',
+		active: false,
+		role: 'other'
+	},
+	{
+		name: 'Juan4 Canelo Chávez',
+		active: true,
+		role: 'teacher'
 	}
 ];
 
