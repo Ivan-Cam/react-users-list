@@ -1,4 +1,3 @@
-import Title from './components/Title';
 import UsersList from './components/UsersList';
 
 const USERS = [
@@ -31,7 +30,7 @@ const USERS = [
 
 const App = () => (
 	<UsersList users={USERS}>
-		<Title>Listado de usuarios</Title>
+		<h1>Listado de usuarios</h1>
 	</UsersList>
 );
 
