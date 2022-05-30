@@ -12,6 +12,11 @@ const USERS = [
 		role: 'teacher'
 	},
 	{
+		name: 'Pablo Lopez',
+		active: true,
+		role: 'teacher'
+	},
+	{
 		name: 'Juan Canelo Chávez',
 		active: false,
 		role: 'teacher'
@@ -28,10 +33,6 @@ const USERS = [
 	}
 ];
 
-const App = () => (
-	<UsersList users={USERS}>
-		<h1>Listado de usuarios</h1>
-	</UsersList>
-);
+const App = () => <UsersList users={USERS} />;
 
 export default App;
